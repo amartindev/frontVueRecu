@@ -1,0 +1,22 @@
+// tsconfig.app.json
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json", // Puede que extienda de otro archivo base
+  "include": ["src/**/*", "src/**/*.vue"],      // Archivos que compila
+  "exclude": ["src/**/__tests__/*"],         // Archivos que excluye
+  "compilerOptions": {
+    "composite": true, // Necesario cuando se usa 'references'
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"] // Ejemplo de alias
+    },
+
+    // --- AÑADE O MODIFICA ESTA LÍNEA ---
+    "forceConsistentCasingInFileNames": true,
+
+    // ... otras opciones específicas de tu app ...
+    "lib": ["ESNext", "DOM", "DOM.Iterable"], // Ejemplo
+    "module": "ESNext",
+    "target": "ESNext",
+    // ...etc.
+  }
+}
